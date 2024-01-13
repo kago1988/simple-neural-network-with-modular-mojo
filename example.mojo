@@ -84,3 +84,15 @@ fn train_network(inout network: Network, inputs: Matrix, targets: Matrix, epochs
     }
   }
 }
+
+# Define the `main` function
+fn main() {
+  // Create some sample data
+  var inputs: Matrix = Matrix(Vec::from([1.0, 2.0]), Vec::from([3.0, 4.0]))
+  var targets: Matrix = Matrix(Vec::from([0.0]), Vec::from([1.0]))
+
+  // Initialize the neural network
+  var network = Network(2, 3, 1, 1, 0.1)
+
+  // Train the neural network
+  train_network(&mut network, inputs, targets, 100)
